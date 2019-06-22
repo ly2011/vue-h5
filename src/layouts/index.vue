@@ -1,23 +1,13 @@
 <template>
   <section class="app-main">
-    <!-- <div class="sider">
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-        <router-link to="/mine">mine</router-link> |
-      </div>
-    </div> -->
     <div class="content">
       <router-view></router-view>
     </div>
-
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="search">标签</van-tabbar-item>
-      <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+    <van-tabbar v-model="active" route>
+      <van-tabbar-item icon="wap-home" replace to="/home">主页</van-tabbar-item>
+      <van-tabbar-item icon="send-gift-o" replace to="/list">品类</van-tabbar-item>
+      <van-tabbar-item icon="user-circle-o" replace to="/mine">我的</van-tabbar-item>
     </van-tabbar>
-
   </section>
 </template>
 

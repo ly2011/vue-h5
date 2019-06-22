@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Mine from './mine'
+import List from './list'
 
 import Layout from '@/layouts/index.vue'
 import Home from '@/views/home.vue'
@@ -22,22 +23,7 @@ export default new Router({
           name: 'home',
           component: Home
         },
-        {
-          path: '/about',
-          name: 'about',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "about" */ '@/views/about.vue')
-        },
-        {
-          path: '/detail/:id',
-          name: 'detail',
-          // route level code-splitting
-          // this generates a separate chunk (about.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
-          component: () => import(/* webpackChunkName: "about" */ '@/views/detail.vue')
-        },
+        ...List,
         ...Mine
       ]
     }
