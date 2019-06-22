@@ -4,8 +4,9 @@ import Router from 'vue-router'
 import Mine from './mine'
 import List from './list'
 
+import AsyncLoader from '@/utils/async-loader'
+
 import Layout from '@/layouts/index.vue'
-import Home from '@/views/home.vue'
 
 Vue.use(Router)
 
@@ -21,7 +22,12 @@ export default new Router({
         {
           path: '/home',
           name: 'home',
-          component: Home
+          component: AsyncLoader('views/home.vue')
+        },
+        {
+          path: '/detail',
+          name: 'detail',
+          component: AsyncLoader('views/detail.vue')
         },
         ...List,
         ...Mine
