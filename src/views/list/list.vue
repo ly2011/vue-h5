@@ -5,5 +5,8 @@
   </div>
 </template>
 <style lang="scss" scoped>
-
+.btn {
+  color: #333;
+  font-size: 40px;
+}
 </style>

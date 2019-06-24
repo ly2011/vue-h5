@@ -1,4 +1,5 @@
 const path = require('path')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 // const vuxLoader = require('@vux/loader')
 const resolve = dir => path.join(__dirname, dir)
 
@@ -33,6 +34,7 @@ module.exports = {
         name: false
       }
     }
+    config.plugins.push(new HardSourceWebpackPlugin())
     // config.output = Object.assign({}, config.output, {
     //   filename: '[name].[hash].js',
     //   chunkFilename: '[name].[hash].js'
