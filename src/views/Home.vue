@@ -20,7 +20,6 @@ export default {
   data () {
     return {
       imageURL: goodImg
-      // import meOff from '@/assets/images/footerBar/me_off.png'
       // active: 0,
       // now: Date.now(),
       // searchData: {} // 搜索条件

@@ -6,7 +6,10 @@ import List from './list'
 
 import AsyncLoader from '@/utils/async-loader'
 
-import Layout from '@/layouts/index.vue'
+// import Layout from '@/layouts/index.vue'
+const TabBar = AsyncLoader('components/common/tabbar')
+const Home = AsyncLoader('views/home')
+const Detail = AsyncLoader('views/detail')
 
 Vue.use(Router)
 
@@ -15,23 +18,28 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '',
-      component: Layout,
-      redirect: '/home',
-      children: [
-        {
-          path: '/home',
-          name: 'home',
-          component: AsyncLoader('views/home.vue')
-        },
-        {
-          path: '/detail',
-          name: 'detail',
-          component: AsyncLoader('views/detail.vue')
-        },
-        ...List,
-        ...Mine
-      ]
+      path: '/home',
+      name: 'home',
+      components: {
+        default: Home,
+        tabbar: TabBar
+      },
+      meta: {
+        keepAlive: true
+      }
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: Detail
+    },
+    ...List,
+    ...Mine,
+    {
+      path: '*',
+      redirect: {
+        name: 'home'
+      }
     }
   ]
 })
