@@ -6,8 +6,12 @@
 
 <script>
 export default {
+  props: {
+    id: String
+  },
   created () {
-    console.log('我是参数: ', this.$route.params.id)
+    // console.log('我是参数: ', this.$route.params.id)
+    console.log('我是属性id: ', this.id)
   }
 }
 </script>
