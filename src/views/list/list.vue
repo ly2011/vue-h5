@@ -4,7 +4,7 @@
     <button class="btn" @click="$router.push('/detail/10086')">详情页</button>
   </div>
 </template>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .btn {
   color: #333;
   font-size: 40px;

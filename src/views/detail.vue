@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <h3>我是详情页</h3>
+    <h3 class="title">我是详情页</h3>
   </div>
 </template>
 
@@ -12,6 +12,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.title {
+  color: @blue-color;
+}
 </style>
