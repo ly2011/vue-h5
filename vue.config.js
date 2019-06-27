@@ -19,8 +19,8 @@ module.exports = {
       patterns: [
         // 这个是加上自己的路径，
         // 注意：试过不能使用别名路径
-        resolve('src/styles/common/var.less'),
         resolve('src/styles/common/var.less')
+        // resolve('src/styles/common/index.less')
       ]
     }
   },
@@ -62,7 +62,7 @@ module.exports = {
   // transpileDependencies: ['vux'], // 开启后会导致vux/axios文件报错
   devServer: {
     useLocalIp: true,
-    port: 3000,
+    port: 5000,
     hotOnly: true,
     proxy: {
       '/api': {

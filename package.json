@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "mock": "json-server ./mock/db.json",
     "removecache": "rimraf ./node_modules/.cache"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "hard-source-webpack-plugin": "^0.13.1",
+    "json-server": "^0.15.0",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^8.1.5",

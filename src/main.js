@@ -5,7 +5,7 @@ import store from './store'
 
 import '@/plugins/vant'
 import filters from '@/filters'
-// import '@/styles/index.less'
+import '@/styles/index.less'
 
 Vue.use(filters)
 

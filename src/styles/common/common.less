@@ -1,15 +1,31 @@
+* {
+  box-sizing: border-box;
+}
 .blue {
-    color: @blue-color;
+  color: @blue-color;
 }
 
 .blueBg {
-    background-color: @blue-color;
+  background-color: @blue-color;
 }
 
 .fixedBottom {
-    display: flex;
-    position: absolute;
-    z-index: 500;
-    bottom: 0;
-    width: 100%;
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  bottom: 0;
+  width: 100%;
+}
+.view-router {
+  background-color: @bg-color;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+}
+.full-page {
+  height: 100vh;
+}
+.scroll-wrap {
+  overflow-y: scroll;
 }
