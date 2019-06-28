@@ -2,11 +2,12 @@ import axios from 'axios'
 import Qs from 'qs'
 // import store from '@/store'
 
-const { API_URL = 'https://cnodejs.org/api/v1/' } = process.env
+const { API_URL = '/api' } = process.env
 axios.defaults.baseURL = API_URL // 接口地址
 
 // 设置默认请求头
-axios.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
+axios.defaults.headers.common['Content-Type'] =
+  'application/x-www-form-urlencoded;charset=UTF-8'
 
 const needTransformMethods = ['post', 'POST', 'put', 'PUT', 'delete', 'DELETE']
 
@@ -23,7 +24,10 @@ service.interceptors.request.use(
     if (!config.data) {
       config.data = {}
     }
-    if (!(!useQs && useQs !== undefined) && needTransformMethods.includes(method)) {
+    if (
+      !(!useQs && useQs !== undefined) &&
+      needTransformMethods.includes(method)
+    ) {
       config.data = Qs.stringify(config.data, { allowDots: true })
     }
     config.data.token = token || ''

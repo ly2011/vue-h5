@@ -48,7 +48,9 @@ module.exports = {
   },
 
   chainWebpack: config => {
-    config.resolve.alias.set('@', resolve('src')).set('components', resolve('src/components'))
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('components', resolve('src/components'))
     config.plugins.delete('prefetch')
     config.plugins.delete('preload')
     // config.plugins.delete('case-sensitive-paths')
@@ -63,7 +65,7 @@ module.exports = {
   devServer: {
     useLocalIp: true,
     port: 5000,
-    hotOnly: true,
+    // hotOnly: true,
     proxy: {
       '/api': {
         target: 'http://127.0.0.1:3000',
