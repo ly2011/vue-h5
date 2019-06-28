@@ -1,5 +1,19 @@
 import Vue from 'vue'
-import { Card, Button, Tabbar, TabbarItem, Picker, Toast, Search, Sidebar, SidebarItem } from 'vant'
+import {
+  Card,
+  Button,
+  Tabbar,
+  TabbarItem,
+  Picker,
+  Toast,
+  Search,
+  Sidebar,
+  SidebarItem,
+  Tab,
+  Tabs,
+  Popup,
+  List
+} from 'vant'
 
 Vue.use(Card)
   .use(Button)
@@ -10,3 +24,7 @@ Vue.use(Card)
   .use(Search)
   .use(Sidebar)
   .use(SidebarItem)
+  .use(Tab)
+  .use(Tabs)
+  .use(Popup)
+  .use(List)

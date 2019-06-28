@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Mine from './mine'
 import List from './list'
+import Product from './product'
 
 import AsyncLoader from '@/utils/async-loader'
 
@@ -36,6 +37,7 @@ export default new Router({
     },
     ...List,
     ...Mine,
+    ...Product,
     {
       path: '*',
       redirect: {

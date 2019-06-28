@@ -10,7 +10,7 @@
       </van-sidebar>
       <div class="branch-list">
         <ul class="branch-item-wrap">
-          <li v-for="(item, index) in goods" :key="index" class="branch-item">
+          <li v-for="(item, index) in goods" :key="index" @click="toProductList(item.id)" class="branch-item">
             <div class="img-box"><img :src="item.pic_url" :alt="item.name"></div>
             <div class="title">{{item.name}}</div>
           </li>
@@ -83,6 +83,15 @@ export default {
       params.currentPage = this.pagination.currentPage
       params.pageSize = this.pagination.pageSize
       return params
+    },
+    toProductList (id = '') {
+      this.$router.push({
+        name: 'products',
+        query: {
+          keyword: '',
+          itemClass: id
+        }
+      })
     }
   }
 }

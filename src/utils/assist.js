@@ -26,3 +26,9 @@ export const deepCopy = source => {
   }
   return target
 }
+
+export const sleep = time => {
+  return new Promise(resolve => {
+    setTimeout(resolve, time)
+  })
+}
