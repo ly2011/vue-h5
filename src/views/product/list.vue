@@ -6,10 +6,7 @@
     <van-tabs v-model="tabActive">
       <van-tab v-for="(tab, tabIndex) in tabsItem" :title="tab.name" :key="tab.type" :disabled="tab.sort === false">
         <InfinityScroll :ref="'tabScrolls' + tabIndex" class="full-page scroll-wrap fix-height" :beforeRequest="beforeRequest" :apiUrl="listApi" @onLoad="onLoad(tabIndex, $event)">
-          <!-- <div class="item" v-for="(item, i) in tab.items" :key="i">
-            {{item.name}}
-          </div> -->
-          <van-card class="card-box" v-for="(item, i) in tab.items" :key="i" :tag="item.is_haitao ? '海淘': ''" price="2.00" desc="描述信息" title="商品标题" :thumb="item.pic_url" origin-price="10.00">
+          <van-card class="card-box" lazy-load v-for="(item, i) in tab.items" :key="i" :tag="item.is_haitao ? '海淘': ''" price="2.00" desc="描述信息" title="商品标题" :thumb="item.pic_url" origin-price="10.00" @click="itemClick(item.id)">
           </van-card>
         </InfinityScroll>
       </van-tab>
@@ -46,6 +43,9 @@ export default {
           shop_id: this.shop_id
         }
       }
+    },
+    itemClick (id) {
+      this.$router.push({ name: 'productDetail', params: { itemId: id } })
     }
   }
 }

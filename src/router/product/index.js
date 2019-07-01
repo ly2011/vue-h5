@@ -1,5 +1,6 @@
 import AsyncLoader from '@/utils/async-loader'
 const Products = AsyncLoader('views/product/list')
+const ProductDetail = AsyncLoader('views/product/detail')
 export default [
   {
     path: '/products',
@@ -10,5 +11,11 @@ export default [
     meta: {
       keepAlive: true
     }
+  },
+  {
+    path: '/product/:itemId',
+    name: 'productDetail',
+    component: ProductDetail,
+    props: true
   }
 ]

@@ -1,6 +1,9 @@
 import Vue from 'vue'
+import 'vant/lib/icon/local.css'
 import {
   Card,
+  Cell,
+  CellGroup,
   Button,
   Tabbar,
   TabbarItem,
@@ -12,10 +15,19 @@ import {
   Tab,
   Tabs,
   Popup,
-  List
+  List,
+  Swipe,
+  SwipeItem,
+  GoodsAction,
+  GoodsActionButton,
+  GoodsActionIcon,
+  Sku,
+  Lazyload
 } from 'vant'
 
 Vue.use(Card)
+  .use(Cell)
+  .use(CellGroup)
   .use(Button)
   .use(Tabbar)
   .use(TabbarItem)
@@ -28,3 +40,10 @@ Vue.use(Card)
   .use(Tabs)
   .use(Popup)
   .use(List)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(GoodsAction)
+  .use(GoodsActionButton)
+  .use(GoodsActionIcon)
+  .use(Sku)
+  .use(Lazyload)
