@@ -7,6 +7,7 @@ import {
   Button,
   Tabbar,
   TabbarItem,
+  Tag,
   Picker,
   Toast,
   Search,
@@ -31,6 +32,7 @@ Vue.use(Card)
   .use(Button)
   .use(Tabbar)
   .use(TabbarItem)
+  .use(Tag)
   .use(Picker)
   .use(Toast)
   .use(Search)
